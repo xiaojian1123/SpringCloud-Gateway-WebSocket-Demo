@@ -35,7 +35,7 @@
         }
 
         function connect() {
-            var socket = new SockJS(host+'/bullet');
+            var socket = new SockJS(host+'/client-bullet');
             stompClient = Stomp.over(socket);
             stompClient.connect({}, function(frame) {
                 setConnected(true);
@@ -59,7 +59,7 @@
         function send() {
             var name = $('#name').val();
             var message = $('#messgae').val();
-            stompClient.send("/chat", {}, JSON.stringify({username:name,message:message}));
+            stompClient.send("/app/chat", {}, JSON.stringify({username:name,message:message}));
         }
 
         function showResponse(message) {

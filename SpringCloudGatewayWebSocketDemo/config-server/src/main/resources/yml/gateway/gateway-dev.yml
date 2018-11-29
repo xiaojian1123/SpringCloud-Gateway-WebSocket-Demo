@@ -14,14 +14,15 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: bulletscreen
-        uri: lb://bullet
+      - id: bulletscreen1
+        # /info必须使用http进行转发，lb代表从注册中心获取服务
+        uri: lb://client
         predicates:
-        - Path=/bullet/info/**
-      - id: bulletscreen
-        uri: lb:ws://bullet
+        - Path=/client-bullet/info/**
+      - id: bulletscreen2
+        uri: lb:ws://client
         predicates:
-        - Path=/bullet/**
+        - Path=/client-bullet/**
 #        filters:
 #        - name: Hystrix
 #          args:

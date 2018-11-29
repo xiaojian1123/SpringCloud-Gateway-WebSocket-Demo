@@ -23,6 +23,8 @@ public class BulletController {
             }
         }
         logger.info(clientMessage.getUsername()+":"+clientMessage.getMessage());
+
+//        this.messagingTemplate.convertAndSend("/topic/notice", clientMessage.getMessage()); //等同 SendTo
         return clientMessage.getMessage();
     }
 

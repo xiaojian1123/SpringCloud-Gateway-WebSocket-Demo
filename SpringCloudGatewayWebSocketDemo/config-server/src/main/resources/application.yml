@@ -11,10 +11,12 @@ spring:
       server:
         native:
           search-locations:
-          - classpath:/yml/admin/
+#          - classpath:/yml/admin/
           - classpath:/yml/bullet/
-          - classpath:/yml/game/
+#          - classpath:/yml/game/
           - classpath:/yml/gateway/
+  main:
+    allow-bean-definition-overriding: true
 server:
   port: 1026
 eureka:
